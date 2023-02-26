@@ -1,5 +1,19 @@
-.cart{
+.cart {
     position: sticky;
     top: 0;
     padding: 30px 45px;
+}
+
+.clear-cart-btn {
+    background: #FF3030;
+    width: 180px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    cursor: pointer;
 }

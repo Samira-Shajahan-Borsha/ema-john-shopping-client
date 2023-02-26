@@ -10,11 +10,27 @@
     margin: 100px 40px;
 }
 
-
-.cart-container{
+.cart-container {
     background-color: rgba(255, 153, 0, 0.3);
 }
 
+/* review order button styles */
+.review-order{
+    text-decoration: none;
+}
+.review-order-btn{
+    background: #FF9900;
+    width: 180px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
 
 @media screen and (max-width: 600px) {
     .products-container {

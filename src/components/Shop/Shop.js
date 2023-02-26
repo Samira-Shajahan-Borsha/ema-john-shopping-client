@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { addToDb, getStoredCart } from '../../utilities/fakedb';
+import { Link, useLoaderData } from 'react-router-dom';
+import { addToDb, deleteShoppingCart, getStoredCart } from '../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
@@ -10,6 +12,11 @@ const Shop = () => {
     const products = useLoaderData();
 
     const [cart, setCart] = useState([]);
+
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
 
     //load data from local storage and find product
     useEffect(() => {
@@ -43,6 +50,8 @@ const Shop = () => {
         addToDb(selectedProduct.id);
     }
 
+
+
     return (
         <div className='shop-container'>
             <div className="products-container">
@@ -55,7 +64,15 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart handleClearCart={handleClearCart} cart={cart}>
+                    <Link to='/orders' className='review-order'>
+                        <br />
+                        <button className='review-order-btn'>
+                            <div>Review Order </div>
+                            <div><FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></div>
+                        </button>
+                    </Link>
+                </Cart>
             </div>
         </div>
     );
