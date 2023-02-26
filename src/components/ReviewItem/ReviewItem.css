@@ -36,10 +36,15 @@
 .delete-btn {
     width: 55px;
     height: 55px;
+    cursor: pointer;
     border-radius: 50%;
     border: none;
     background: rgba(235, 87, 87, 0.3);
     margin-right: 23px;
+}
+
+.delete-btn:hover {
+    background: rgba(235, 87, 87, 0.5);
 }
 
 .delete-icon {
