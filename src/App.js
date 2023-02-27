@@ -5,9 +5,9 @@ import Shop from './components/Shop/Shop';
 import Orders from './components/Orders/Orders';
 import Inventory from './components/Inventory/Inventory';
 import { productsAndCartLoader } from './loaders/productsAndCartLoader';
-import './App.css';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import './App.css';
 
 
 function App() {
