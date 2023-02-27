@@ -6,9 +6,15 @@ import './Header.css';
 
 const Header = () => {
 
-    const {user} = useContext(AuthContext);
-    
-    console.log(user.email);
+    const { user, logOut } = useContext(AuthContext);
+
+    // console.log(user.email);
+
+    const handleSignOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
 
     return (
         <nav className='header'>
@@ -20,10 +26,14 @@ const Header = () => {
                 <Link to="/orders">Orders</Link>
                 <Link to="/inventory">Inventory</Link>
                 <Link to="/about">About</Link>
-                <Link to="/login">Login</Link>
-                <Link to="/signup">Sign up</Link>
+                {
+                    user?.uid ? <button onClick={handleSignOut} className='logout-btn'>Sign Out</button>
+                        : <>
+                            <Link to="/login">Login</Link>
+                            <Link to="/signup">Sign up</Link>
+                        </>
+                }
             </div>
-            <p>{user?.email}</p>
         </nav>
     );
 };
