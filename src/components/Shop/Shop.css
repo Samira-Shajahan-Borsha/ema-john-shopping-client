@@ -14,11 +14,29 @@
     background-color: rgba(255, 153, 0, 0.3);
 }
 
+.pagination {
+    margin-left: 200px;
+    margin-bottom: 50px;
+}
+
+.pagination button {
+    margin-right: 20px;
+}
+
+.pagination .selected { 
+    background-color: goldenrod;
+    border: gold;
+    font-weight: bold;
+    /* width: 40px; */
+    padding: 8px;
+}
+
 /* review order button styles */
-.review-order{
+.review-order {
     text-decoration: none;
 }
-.review-order-btn{
+
+.review-order-btn {
     background: #FF9900;
     width: 180px;
     height: 30px;
